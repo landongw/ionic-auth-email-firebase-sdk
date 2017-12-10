@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any;
 
   constructor(
     platform: Platform,
@@ -18,6 +18,16 @@ export class MyApp {
     splashScreen: SplashScreen
   ) {
     firebase.initializeApp(firebaseConfig);
+
+    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.rootPage = HomePage;
+        unsubscribe();
+      } else {
+        this.rootPage = 'LoginPage';
+        unsubscribe();
+      }
+    });
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
