@@ -30,11 +30,6 @@ export class AuthProvider {
   }
 
   logoutUser(): Promise<void> {
-    const userId: string = firebase.auth().currentUser.uid;
-    firebase
-      .database()
-      .ref(`/userProfile/${userId}`)
-      .off();
     return firebase.auth().signOut();
   }
 }
