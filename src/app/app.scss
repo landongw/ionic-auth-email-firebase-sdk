@@ -8,7 +8,7 @@
 
   p {
     font-size: 0.8em;
-    color: #d2d2d2;
+    color: #ff0000;
   }
 
   ion-label {
@@ -20,7 +20,21 @@
   }
 
   .invalid {
-    border-bottom: 1px solid #ff6153;
+    .item-inner {
+      border: 0;
+    }
+    ion-input {
+      border-bottom: 1px solid #ff6153;
+    }
+  }
+
+  .valid {
+    .item-inner {
+      border: 0;
+    }
+    ion-input {
+      border-bottom: 1px solid #1eff00;
+    }
   }
 
   .error-message {

@@ -1,17 +1,17 @@
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Login</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding class="auth-page">
+  <img src="http://placehold.it/300x150" alt="Banner for the login page" />
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
-    <ion-item>
+    <ion-item [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.touched"
+      [class.valid]="loginForm.controls.email.valid && loginForm.controls.email.touched">
       <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="Your email address" [class.invalid]="!loginForm.controls.email.valid && blur">
+      <ion-input formControlName="email" type="email" placeholder="Your email address">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid &&
@@ -19,9 +19,10 @@
       <p>Please enter a valid email address.</p>
     </ion-item>
 
-    <ion-item>
+    <ion-item [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.touched"
+      [class.valid]="loginForm.controls.password.valid && loginForm.controls.password.touched">
       <ion-label stacked>Password</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Your password" [class.invalid]="!loginForm.controls.password.valid && blur">
+      <ion-input formControlName="password" type="password" placeholder="Your password">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid
