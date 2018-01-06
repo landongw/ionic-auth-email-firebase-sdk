@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
 import { firebaseConfig } from './credentials';
 import { HomePage } from '../pages/home/home';
+import { Unsubscribe } from '@firebase/util';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,7 +20,7 @@ export class MyApp {
   ) {
     firebase.initializeApp(firebaseConfig);
 
-    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+    const unsubscribe: Unsubscribe = firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.rootPage = HomePage;
         unsubscribe();
