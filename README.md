@@ -16,13 +16,17 @@ The template includes:
 Clone this repository using ssh:
 
 ```sh
-$ git clone git@github.com:javebratt/ionic-auth-email-firebase-sdk.git && cd ionic-auth-email-firebase-sdk && npm install
+$ git clone git@github.com:javebratt/ionic-auth-email-firebase-sdk.git
+$ cd ionic-auth-email-firebase-sdk
+$ npm install
 ```
 
 Or https:
 
 ```sh
-$ git clone https://github.com/javebratt/ionic-auth-email-firebase-sdk.git && cd ionic-auth-email-firebase-sdk && npm install
+$ git clone https://github.com/javebratt/ionic-auth-email-firebase-sdk.git
+$ cd ionic-auth-email-firebase-sdk
+$ npm install
 ```
 
 Once cloned, move into the app folder and edit the name of the file
