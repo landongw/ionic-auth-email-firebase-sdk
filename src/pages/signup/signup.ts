@@ -52,7 +52,7 @@ export class SignupPage {
       const password = this.signupForm.value.password;
 
       try {
-        const signupUser: firebase.User = await this.authProvider.signupUser(
+        await this.authProvider.signupUser(
           email,
           password
         );
